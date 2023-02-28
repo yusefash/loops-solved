@@ -10,7 +10,14 @@ export function separateNamesWithAFromRest(array) {
   const withoutA = [];
   for (let i = 0; i < array.length; i++) {
     const name = array[i];
-    if (name.includes('a')) {
+    let hasA = false;
+    for (let j = 0; j < name.length; j++) {
+      if (name[j] === 'a') {
+        hasA = true;
+        break;
+      }
+    }
+    if (hasA) {
       containsA.push(name);
     } else {
       withoutA.push(name);
