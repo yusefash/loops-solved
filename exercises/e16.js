@@ -6,8 +6,19 @@
 // NOTE: You can NOT use the array.flat() method in your code
 
 export function flatArrays(array) {
-  // Your code goes here...
+  const concatenatedArray = [];
 
+for (let i = 0; i < array.length; i++) {
+  const element = array[i];
+  if (Array.isArray(element)) {
+    for (let j = 0; j < element.length; j++) {
+      concatenatedArray.push(element[j]);
+    }
+  } else {
+    concatenatedArray.push(element);
+  }
+}
+  return concatenatedArray;
 }
 
 

@@ -4,9 +4,22 @@
 // getClientsWithLetterInName(bankAccounts, 'e') => ['Kevin', 'Steven', ...]
 
 export function getClientsWithLetterInName(array, letter) {
-  // Your code goes here...
+  const accountHolders = [];
+  for (let i = 0; i < array.length; i++) {
+    accountHolders.push(array[i].name);
+  }
 
+  const filteredAccountHolders = [];
+  for (let i = 0; i < accountHolders.length; i++) {
+    if (accountHolders[i].toLowerCase().includes(letter.toLowerCase())) {
+      filteredAccountHolders.push(accountHolders[i]);
+    }
+  }
+
+  return filteredAccountHolders;
 }
+
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-10"
